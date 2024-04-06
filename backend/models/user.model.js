@@ -24,8 +24,13 @@ const userSchema = new Schema(
     profilePic: {
         type: String,
         default: ""
-    }
-});
+    },
+},
+//createdat, UpdatedAt= member since  <created at>
+{
+    timestamps:true
+}
+);
 
 const User = mongoose.model("User", userSchema);
 
