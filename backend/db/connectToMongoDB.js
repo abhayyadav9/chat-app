@@ -18,7 +18,6 @@ dotenv.config(); // Load environment variables from .env file
 const connectToMongoDB = async () => {
     try {
         const mongoURI = process.env.MONGO_DB_URI; // Access MongoDB URI from environment variables
-        console.log("MongoDB URI:", mongoURI); // Log MongoDB URI
 
         // Check if the URI is not undefined
         if (!mongoURI) {
