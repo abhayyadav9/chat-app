@@ -10,16 +10,24 @@
 //     }
 // }
 // export default connectToMongoDB;
-
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config(); // Load environment variables from .env file
 
 const connectToMongoDB = async () => {
     try {
-        await mongoose.connect(process.env.MONGO_DB_URI, {
+        const mongoURI = process.env.MONGO_DB_URI; // Access MongoDB URI from environment variables
+        console.log("MongoDB URI:", mongoURI); // Log MongoDB URI
+
+        // Check if the URI is not undefined
+        if (!mongoURI) {
+            throw new Error("MongoDB URI is not defined in the environment variables.");
+        }
+
+        await mongoose.connect(mongoURI, {
             useNewUrlParser: true,
-            useUnifiedTopology: true,
-            // Remove the deprecated options
-            // useFindAndModify: false
+            useUnifiedTopology: true
         });
         console.log("Connected to MongoDB");
     } catch (error) {
