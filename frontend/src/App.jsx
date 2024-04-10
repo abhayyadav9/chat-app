@@ -7,7 +7,7 @@ import {
   Switch,
   Route,
   Redirect,
-} from "react-router-dom"; // Import Switch and Redirect
+} from "react-router-dom"; // Import Redirect along with BrowserRouter, Switch, and Route
 import { useAuthContext } from "./context/AuthContext.jsx";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
     <div className="p-4 h-screen flex items-center justify-center">
       <Router>
         <Switch>
-          <Route path="/">
+          <Route exact path="/"> {/* Use exact to match the path exactly */}
             {authUser ? <Home /> : <Redirect to="/login" />}
           </Route>
 
