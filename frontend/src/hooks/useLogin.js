@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { useAuthContext } from '../context/AuthContext'; 
+import { useAuthContext } from "../context/AuthContext";
 
 const useLogin = () => {
   const [loading, setLoading] = useState(false);
   const { setAuthUser } = useAuthContext();
-  
+
   const login = async (username, password) => {
     try {
       const success = handleInputErrors({ username, password });
@@ -16,7 +16,7 @@ const useLogin = () => {
       const res = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" }, // Corrected header name
-        body: JSON.stringify({ username, password }) // Corrected spelling of stringify
+        body: JSON.stringify({ username, password }), // Corrected spelling of stringify
       });
 
       const data = await res.json();
@@ -43,6 +43,6 @@ function handleInputErrors({ username, password }) {
     console.log("Please fill in all fields");
     return false;
   }
-  
+
   return true;
 }

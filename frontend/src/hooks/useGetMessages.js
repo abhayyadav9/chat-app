@@ -17,7 +17,6 @@ const useGetMessages = () => {
 
         setMessages(data);
       } catch (error) {
-        console.error('Error:', error.message); // Log error to console
         // Handle error
       } finally {
         setLoading(false);
