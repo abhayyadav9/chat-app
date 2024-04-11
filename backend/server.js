@@ -10,11 +10,11 @@ import connectToMongoDB from "./db/connectToMongoDB.js";
 import { server } from "./socket/socket.js";
 import { app } from "./socket/socket.js";
 
-dotenv.config();
-const PORT = process.env.PORT || 5000;
 
-// Enable CORS
-app.use(cors());
+const PORT = process.env.PORT || 5000;
+dotenv.config();
+
+
 
 // Parse incoming requests with JSON payload (from req.body)
 app.use(express.json());
