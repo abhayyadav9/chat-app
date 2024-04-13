@@ -2,151 +2,156 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
- background: linear-gradient(rgba(0,0,0,0.2)),rgba(0,0,0,0.2), url("https://cdn.pixabay.com/photo/2017/09/14/11/25/water-2748695_1280.png");
-  background-color:blue;
-  background-repeat: no-repeat ;
+body {
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://cdn.pixabay.com/photo/2017/09/14/11/25/water-2748695_1280.png");
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-attachment:  fixed;
+  background-attachment: fixed;
+  height: 100%;
 }
 
-/* dark mode looking scrollbar */
+/* Dark mode looking scrollbar */
 ::-webkit-scrollbar {
-	width: 8px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-	background: #555;
+  background: #555;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #121212;
-	border-radius: 5px;
+  background: #121212;
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #242424;
+  background: #242424;
 }
-
 
 /* SHAKE ANIMATION ON HORIZONTAL DIRECTION */
 .shake {
-	animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) 0.2s both;
-	transform: translate3d(0, 0, 0);
-	backface-visibility: hidden;
-	perspective: 1000px;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) 0.2s both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 @keyframes shake {
-	10%,
-	90% {
-		transform: translate3d(-1px, 0, 0);
-	}
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
 
-	20%,
-	80% {
-		transform: translate3d(2px, 0, 0);
-	}
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
 
-	30%,
-	50%,
-	70% {
-		transform: translate3d(-4px, 0, 0);
-	}
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
 
-	40%,
-	60% {
-		transform: translate3d(4px, 0, 0);
-	}
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
-
 
 /* Default styles */
 .home {
-	border: 1px solid black;
-	width: 100%;
-	background: #000000;
-	border-radius: 10px;
-	margin: 20px 20px 20px 0px;
-  }
-  
-  .sidebar {
+  border: 1px solid black;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.sidebar {
+  margin-top: 10px;
+  height: 550px;
+}
+
+.sidebar-open .sidebar {
+  transform: translateX(0);
+}
+
+.sidebar {
+  /* Your default styles for the sidebar */
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+/* Toggle button */
+.toggle-btn {
+  display: none;
+}
+
+.message-container {
 	margin-top: 10px;
-  }
-  
-  .sidebar-open .sidebar {
-	transform: translateX(0);
-  }
-  
-  .sidebar {
-	/* Your default styles for the sidebar */
-	transform: translateX(-100%);
-	transition: transform 0.3s ease;
-  }
+  width: 100%; /* Occupy entire width by default */
+  height: 650px;
+}
 
-  
-  /* Toggle button */
-  .toggle-btn {
-	display: none;
+.btmnav {
+  margin-right: -550px;
+}
+
+
+.navbar {
+	background-color: #db6565;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: row;
+	height: 70px;
+	margin-top: 0px;
   }
+/* Media query for screens with a maximum width of 768px */
+@media screen and (max-width: 768px) {
   .message-container {
-	width: 100%; /* Occupy entire width by default */
+	height: 550px;
   }
-  
-  
-  /* Media query for screens with a maximum width of 768px */
-  @media screen and (max-width: 768px) {
-	.message-container{
-		height: 80vh;
-	}
-	.home {
-		height: 100%;
-		border: 1px solid black;
-		width: 350px;
-		background: #000000;
-		border-radius: 10px;
-		margin-left: -10px;
-	  }
-	/* Show the toggle button */
-	.toggle-btn {
-	  display: block;
-	  position: absolute;
-	  top: 10px;
-	  right: 10px;
-	  background-color: transparent;
-	  border: none;
-	  cursor: pointer;
-	}
-  
-	/* Adjust sidebar styles for smaller screens */
-	.sidebar {
-	  position: fixed;
-	  top: -10px;
-	  left: -100%;
-	  height: 70vh;
-	  width: 50%;
-	  background-color: #db6565; /* Adjust the background color as needed */
-	  z-index: 1000; /* Ensure sidebar is above other content */
-	  transition: left 0.3s ease;
-	}
-  
-	/* Adjust sidebar styles when it's open */
-	.sidebar-open .sidebar {
-	  left: 0;
-	}
 
-	.search-input{
-		width: 50px;
-	}
-	.setting{
-		margin-left: 20px;
-	}
-	.setting1{
-		margin-left: 220px;
-		margin-top: -15px;
-	}
+  .home {
+    height: 70vh;
+    border: 1px solid black;
+    width: 100%;
+    border-radius: 10px;
+	padding-top: 0px;
+	margin-top: -170px;
   }
-  
 
-  
+  /* Show the toggle button */
+  .toggle-btn {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Adjust sidebar styles for smaller screens */
+  .sidebar {
+    position: fixed;
+    top: 0px;
+    left: -100%;
+    height: 70vh;
+    width: 50%;
+    background-color: #db6565; /* Adjust the background color as needed */
+    z-index: 1000; /* Ensure sidebar is above other content */
+    transition: left 0.3s ease;
+  }
+
+  /* Adjust sidebar styles when it's open */
+  .sidebar-open .sidebar {
+    left: 0;
+  }
+
+  .navbar {
+	background-color: #db6565;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: row;
+	height: 70px;
+  }
+  .conversation{
+	font-size: small;
+  }
+}
