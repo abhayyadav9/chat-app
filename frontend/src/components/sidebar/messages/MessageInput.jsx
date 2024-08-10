@@ -20,7 +20,7 @@ function MessageInput() {
           type='text'
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className='border text-sm rounded-lg block w-full p-2.5 bg-black-500 border-gray-600 text-white'
+          className='border text-sm rounded-lg block w-full p-2.5 bg-black-500 border-gray-600 bg-black text-white'
           placeholder='Send a message'
         />
 

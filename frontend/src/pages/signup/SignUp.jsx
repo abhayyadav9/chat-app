@@ -54,7 +54,7 @@ const SignUp = () => {
               type="text"
               name="fullName"
               placeholder="Full name"
-              className="w-full input input-bordered  text-white h-10"
+              className="w-full input input-bordered bg-black text-white h-10"
               value={inputs.fullName}
               onChange={handleInputChange}
             />
@@ -68,7 +68,7 @@ const SignUp = () => {
               type="text"
               name="username"
               placeholder="username"
-              className="w-full input input-bordered h-10  text-white"
+              className="w-full input input-bordered h-10 bg-black text-white"
               value={inputs.username}
               onChange={handleInputChange}
             />
@@ -82,7 +82,7 @@ const SignUp = () => {
               type="password"
               name="password"
               placeholder="Enter Password"
-              className="w-full input input-bordered  text-white h-10"
+              className="w-full input input-bordered bg-black  text-white h-10"
               value={inputs.password}
               onChange={handleInputChange}
             />
@@ -96,7 +96,7 @@ const SignUp = () => {
               type="password"
               name="confirmPassword"
               placeholder="Confirm Password"
-              className="w-full input input-bordered h-10 text-white "
+              className="w-full input input-bordered h-10 bg-black text-white "
               value={inputs.confirmPassword}
               onChange={handleInputChange}
             />

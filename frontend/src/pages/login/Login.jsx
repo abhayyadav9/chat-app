@@ -31,7 +31,7 @@ export const Login = () => {
               onChange={(e) => setUsername(e.target.value)}
               type=" text"
               placeholder="Enter username"
-              className="input  text-white input-bordered input-sm w-full max-w-xs"
+              className="input bg-black  text-white input-bordered input-sm w-full max-w-xs"
             />
           </div>
 
@@ -44,7 +44,7 @@ export const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               type=" password"
               placeholder="Enter Password"
-              className="input input-bordered text-white input-sm w-full max-w-xs"
+              className="input input-bordered bg-black text-white input-sm w-full max-w-xs"
             />
           </div>
           <Link to="/signup" className="link link-warning text-sm">
