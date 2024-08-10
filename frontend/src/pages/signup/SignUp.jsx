@@ -40,7 +40,7 @@ const SignUp = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-w-96 mx-auto">
-      <div className="w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
+      <div className="w-full p-4 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
         <h1 className="text-3xl font-semibold text-center text-gray-300">
           Sign Up <span className="text-blue-500"> ChatApp</span>
         </h1>
@@ -53,8 +53,8 @@ const SignUp = () => {
             <input
               type="text"
               name="fullName"
-              placeholder="avie"
-              className="w-full input input-bordered h-10"
+              placeholder="Full name"
+              className="w-full input input-bordered  text-white h-10"
               value={inputs.fullName}
               onChange={handleInputChange}
             />
@@ -62,13 +62,13 @@ const SignUp = () => {
 
           <div>
             <label className="label p-2 ">
-              <span className="text-base label-text">Username</span>
+              <span className="text-base label-text ">Username</span>
             </label>
             <input
               type="text"
               name="username"
-              placeholder="johndoe"
-              className="w-full input input-bordered h-10"
+              placeholder="username"
+              className="w-full input input-bordered h-10  text-white"
               value={inputs.username}
               onChange={handleInputChange}
             />
@@ -82,7 +82,7 @@ const SignUp = () => {
               type="password"
               name="password"
               placeholder="Enter Password"
-              className="w-full input input-bordered h-10"
+              className="w-full input input-bordered  text-white h-10"
               value={inputs.password}
               onChange={handleInputChange}
             />
@@ -90,13 +90,13 @@ const SignUp = () => {
 
           <div>
             <label className="label">
-              <span className="text-base label-text">Confirm Password</span>
+              <span className="text-base  label-text">Confirm Password</span>
             </label>
             <input
               type="password"
               name="confirmPassword"
               placeholder="Confirm Password"
-              className="w-full input input-bordered h-10"
+              className="w-full input input-bordered h-10 text-white "
               value={inputs.confirmPassword}
               onChange={handleInputChange}
             />
@@ -111,13 +111,13 @@ const SignUp = () => {
           
           <Link
             to="/login"
-            className="text-sm hover:underline hover:text-blue-600 mt-2 inline-block"
+            className="text-sm hover:underline text-white hover:text-green-900 mt-2 inline-block"
           >
             Already have an account?
           </Link>
 
           <div>
-						<button className='btn btn-block btn-sm mt-2 border border-slate-700' disabled={loading}>
+						<button className='btn btn-block btn-sm mt-4 border border-slate-700 text-white ' disabled={loading}>
 							{loading ? <span className='loading loading-spinner'></span> : "Sign Up"}
 						</button>
 					</div>
